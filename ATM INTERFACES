@@ -1,0 +1,61 @@
+package Project;
+
+import java.util.Scanner;
+
+public class ATMinterface {
+    public static void main(String[] args) {
+        int balance = 100000 , withdraw, deposit;
+
+        Scanner scanner = new Scanner(System.in);
+        while(true)
+        {
+            System.out.println(" ATM MENU : ");
+            System.out.println(" 1. FOR CHECK BALANCE ");
+            System.out.println(" 2. FOR   WITHDRAW ");
+            System.out.println(" 3. FOR    DEPOSIT ");
+            System.out.println(" 4. FOR     EXIT  ");
+            System.out.println(" ENTER YOUR CHOICE (WHATEVER YOU WANT TO DO) : ");
+
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:  System.out.println("Balance :" +balance);
+                System.out.println(" ");
+                break;
+
+                case 2: System.out.println("ENTER MONEY TO BE WITHDRAW :");
+                    withdraw = scanner.nextInt();
+    
+                    if(balance >= withdraw){
+                        balance = balance - withdraw;
+                        System.out.println(" wait ....");
+                        System.out.println(" Please Collect Your Money ....");
+    
+                    }
+                    else
+                    {
+                        System.out.println("Your Balance is Insufficient...");
+                    }
+                    System.out.println(" ");
+                        
+                        break;
+
+                    case 3: 
+                    System.out.println("Enter money to be deposited:");
+                    deposit = scanner.nextInt(); 
+                    balance = balance + deposit; 
+                    System.out.println("Your Money has been Successfully Depsited");
+                    System.out.println(" ");
+                    break;
+
+                    case 4: System.exit(0);
+
+                default: System.out.println("You Enter The Wrong Choice...");
+                    break;
+            }
+        
+        }
+
+    }
+}
